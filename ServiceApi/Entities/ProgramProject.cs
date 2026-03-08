@@ -1,5 +1,4 @@
-﻿using System.Diagnostics.Contracts;
-using System.Text.Json.Serialization;
+﻿using System.Text.Json.Serialization;
 
 namespace ServiceApi.Entities;
 
@@ -9,37 +8,37 @@ public class ProgramProject
     /// Идентификатор
     /// </summary>
     [JsonPropertyName("id")]
-    public int Id { get; set; }
+    public required int Id { get; set; }
 
     /// <summary>
     /// Название проекта
     /// </summary>
     [JsonPropertyName("name")]
-    public string Name { get; set; }
+    public required string Name { get; set; }
 
     /// <summary>
     /// Заказчик проекта
     /// </summary>
     [JsonPropertyName("customer")]
-    public string Customer { get; set; }
+    public required string Customer { get; set; }
 
     /// <summary>
     /// Менеджер проекта
     /// </summary>
     [JsonPropertyName("manager")]
-    public string Manager { get; set; }
+    public required string Manager { get; set; }
 
     /// <summary>
     /// Дата начала
     /// </summary>
     [JsonPropertyName("startDate")]
-    public DateOnly StartDate { get; set; }
+    public required DateOnly StartDate { get; set; }
 
     /// <summary>
     /// Плановая дата завершения
     /// </summary>
     [JsonPropertyName("planEndDate")]
-    public DateOnly PlanEndDate { get; set; }
+    public required DateOnly PlanEndDate { get; set; }
 
     /// <summary>
     /// Фактическая дата завершения
@@ -51,17 +50,17 @@ public class ProgramProject
     /// Бюджет
     /// </summary>
     [JsonPropertyName("budget")]
-    public decimal Budget { get; set; }
+    public required decimal Budget { get; set; }
 
     /// <summary>
     /// Фактические затраты
     /// </summary>
     [JsonPropertyName("actualCost")]
-    public decimal ActualCost { get; set; }
+    public required decimal ActualCost { get; set; }
 
     /// <summary>
     /// Процент выполнения
     /// </summary>
     [JsonPropertyName("percentComplete")]
-    public int PercentComplete { get; set; }
+    public required int PercentComplete { get; set; }
 }
