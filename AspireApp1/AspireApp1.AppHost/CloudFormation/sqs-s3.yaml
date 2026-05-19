@@ -1,0 +1,35 @@
+﻿AWSTemplateFormatVersion: '2010-09-09'
+Description: 'Cloud formation for program project with SQS and S3'
+
+Parameters:
+  BucketName:
+    Type: String
+    Default: 'project-bucket'
+  
+  QueueName:
+    Type: String
+    Default: 'project-queue'
+
+Resources:
+  ProjectBucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: !Ref BucketName
+
+  ProjectQueue:
+    Type: AWS::SQS::Queue
+    Properties:
+      QueueName: !Ref QueueName
+
+Outputs:
+  S3BucketName:
+    Value: !Ref ProjectBucket
+  
+  S3BucketArn:
+    Value: !GetAtt ProjectBucket.Arn
+  
+  SQSQueueName:
+    Value: !GetAtt ProjectQueue.QueueName
+  
+  SQSQueueArn:
+    Value: !GetAtt ProjectQueue.Arn

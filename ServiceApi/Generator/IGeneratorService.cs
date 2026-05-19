@@ -12,6 +12,6 @@ public interface IGeneratorService
     /// </summary>
     /// <param name="id"> Идентификатор </param>
     /// <returns>Программный проект</returns>
-    public Task<ProgramProject> ProcessProgramProject(int id);
+    public Task<ProgramProject?> ProcessProgramProject(int id);
     
 }

@@ -13,6 +13,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceApi", "ServiceApi\Se
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api.Gateway", "Api.Gateway\Api.Gateway.csproj", "{F2480B81-02E5-44AD-8E32-6611DDC94471}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileService", "FileService\FileService.csproj", "{A253CE7F-B8F0-05C1-ADB0-29BB6768D575}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspireApp.AppHost.Tests", "AspireApp1\AspireApp1.AppHost.Tests\AspireApp.AppHost.Tests.csproj", "{937DCC3A-4864-4272-9249-353A49D6437A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +43,14 @@ Global
 		{F2480B81-02E5-44AD-8E32-6611DDC94471}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F2480B81-02E5-44AD-8E32-6611DDC94471}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F2480B81-02E5-44AD-8E32-6611DDC94471}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A253CE7F-B8F0-05C1-ADB0-29BB6768D575}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A253CE7F-B8F0-05C1-ADB0-29BB6768D575}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A253CE7F-B8F0-05C1-ADB0-29BB6768D575}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A253CE7F-B8F0-05C1-ADB0-29BB6768D575}.Release|Any CPU.Build.0 = Release|Any CPU
+		{937DCC3A-4864-4272-9249-353A49D6437A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{937DCC3A-4864-4272-9249-353A49D6437A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{937DCC3A-4864-4272-9249-353A49D6437A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{937DCC3A-4864-4272-9249-353A49D6437A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

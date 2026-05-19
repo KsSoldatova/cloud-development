@@ -1,15 +1,17 @@
-﻿using ServiceApi.Entities;
+using ServiceApi.Entities;
+using ServiceApi.Messaging;
 
 namespace ServiceApi.Generator;
 
-  /// <summary>
-  /// Служба для запуска usecase по обработке программных проектов
-  /// </summary>
-  /// <param name="cache">Кэш</param>
-  /// <param name="logger">Логгер</param>
-public class GeneratorService(IProgramProjectCache cache, ILogger<GeneratorService> logger) : IGeneratorService
+/// <summary>
+/// Служба для запуска usecase по обработке программных проектов
+/// </summary>
+/// <param name="cache">Кэш</param>
+/// <param name="producer">Служба для взаимодействия с брокером</param>
+/// <param name="logger">Логгер</param>
+public class GeneratorService(IProgramProjectCache cache, IProducerService producer, ILogger<GeneratorService> logger) : IGeneratorService
 {
-    public async Task<ProgramProject> ProcessProgramProject(int id)
+    public async Task<ProgramProject?> ProcessProgramProject(int id)
     {
         logger.LogInformation("Начало обработки программного проекта {id}", id);
         try
@@ -23,6 +25,7 @@ public class GeneratorService(IProgramProjectCache cache, ILogger<GeneratorServi
             }
             logger.LogInformation("Программного проекта {id} нет в кэше. Создаем программный проект", id);
             programProject = ProgramProjectGenerator.GenerateProgramProject(id);
+            await producer.SendMessage(programProject);
             logger.LogInformation("Сохраняем данные программного проекта {id} в кэш", id);
             await cache.SaveProjectToCache(programProject);
             return programProject;

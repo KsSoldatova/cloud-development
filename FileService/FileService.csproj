@@ -4,15 +4,18 @@
     <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <NoWarn>$(NoWarn);1591</NoWarn>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Bogus" Version="35.6.5" />
-    <PackageReference Include="Aspire.StackExchange.Redis.DistributedCaching" Version="9.5.0" />
+    <PackageReference Include="AWSSDK.S3" Version="4.0.18.7" />
     <PackageReference Include="AWSSDK.SQS" Version="4.0.2.15" />
     <PackageReference Include="LocalStack.Client" Version="2.0.0" />
     <PackageReference Include="LocalStack.Client.Extensions" Version="2.0.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="8.1.4" />
   </ItemGroup>
+
   <ItemGroup>
     <ProjectReference Include="..\AspireApp1\AspireApp1.ServiceDefaults\AspireApp.ServiceDefaults.csproj" />
   </ItemGroup>

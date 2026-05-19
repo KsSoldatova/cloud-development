@@ -10,10 +10,10 @@ public interface IProgramProjectCache
     /// <summary>
     /// Получить проект из кэша по id
     /// </summary>
-    Task<ProgramProject?> GetProjectFromCache(int id);
+    public Task<ProgramProject?> GetProjectFromCache(int id);
 
     /// <summary>
     /// Сохранить проект в кэш
     /// </summary>
-    Task SaveProjectToCache(ProgramProject programProject);
+    public Task SaveProjectToCache(ProgramProject programProject);
 }
