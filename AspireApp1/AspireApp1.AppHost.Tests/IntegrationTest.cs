@@ -88,8 +88,9 @@ public class IntegrationTest(ITestOutputHelper output) : IAsyncLifetime
     }
 
     /// <summary>
-    /// Проверяет, что повторный запрос того же программного проекта
-    /// обслуживается из кэша и не приводит к дублирующей отправке в S3
+    /// Проверяет, что после нескольких запросов одного и того же программного
+    /// проекта в объектном хранилище присутствует ровно один объект с ключом
+    /// programproject_{id}.json
     /// </summary>
     [Fact]
     public async Task RepeatedRequest_DoesNotDuplicateFileInS3()
